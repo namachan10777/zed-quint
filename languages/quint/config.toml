@@ -1,0 +1,12 @@
+name = "Quint"
+grammar = "quint"
+path_suffixes = ["quint"]
+line_comments = ["// "]
+block_comments = ["/* ", " */"]
+autoclose_before = ""
+brackets = [
+  { start = "(", end = ")", close = true, newline = true },
+  { start = "[", end = "]", close = true, newline = true },
+  { start = "{", end = "}", close = true, newline = true },
+]
+word_characters = ["_"]
