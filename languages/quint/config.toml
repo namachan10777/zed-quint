@@ -1,6 +1,6 @@
 name = "Quint"
 grammar = "quint"
-path_suffixes = ["quint"]
+path_suffixes = ["qnt"]
 line_comments = ["// "]
 block_comments = ["/* ", " */"]
 autoclose_before = ""
