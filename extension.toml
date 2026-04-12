@@ -1,0 +1,11 @@
+id = "quint"
+name = "Quint"
+description = "Quint syntax support for zed"
+version = "0.0.1"
+schema_version = 1
+authors = ["Masaki Nakano <admin@namachan10777.dev>"]
+repository = "https://github.com/namachan1077/zed-quint"
+
+[grammars.quint]
+repository = "https://github.com/gruhn/tree-sitter-quint"
+rev = "228f411597d2001c8f1fefb25f692007e4b5ea77"
