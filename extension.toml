@@ -1,7 +1,7 @@
 id = "quint"
 name = "Quint"
 description = "Quint syntax support for zed"
-version = "0.0.1"
+version = "0.1.0"
 schema_version = 1
 authors = ["Masaki Nakano <admin@namachan10777.dev>"]
 repository = "https://github.com/namachan1077/zed-quint"
@@ -9,3 +9,7 @@ repository = "https://github.com/namachan1077/zed-quint"
 [grammars.quint]
 repository = "https://github.com/gruhn/tree-sitter-quint"
 rev = "e413b1b57849a0097478548b25fcae2f3d0171d1"
+
+[language_servers.quint-language-server]
+name = "Quint Language Server"
+languages = ["Quint"]
