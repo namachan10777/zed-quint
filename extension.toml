@@ -4,7 +4,7 @@ description = "Quint syntax support for zed"
 version = "0.1.0"
 schema_version = 1
 authors = ["Masaki Nakano <admin@namachan10777.dev>"]
-repository = "https://github.com/namachan1077/zed-quint"
+repository = "https://github.com/namachan10777/zed-quint"
 
 [grammars.quint]
 repository = "https://github.com/gruhn/tree-sitter-quint"
