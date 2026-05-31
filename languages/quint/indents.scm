@@ -1,18 +1,16 @@
-[
-  (module_definition)
-  (match_expr)
-  (match_case)
-  (record_literal)
-  (list_literal)
-  (tuple_literal)
-  (record_type)
-  (tuple_type)
-  (typed_argument_list)
-  (lambda_expr)
-] @indent
+; 括弧ペアを @indent し、閉じトークンを @end でマークして揃える。
+; @outdent 単体だと閉じ括弧が二重にデデントされ 1 段浅くなるため使わない。
+(_
+  "("
+  ")" @end
+) @indent
 
-[
-  ")"
-  "]"
-  "}"
-] @outdent
+(_
+  "["
+  "]" @end
+) @indent
+
+(_
+  "{"
+  "}" @end
+) @indent
