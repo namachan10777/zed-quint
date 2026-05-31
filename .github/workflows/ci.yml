@@ -9,9 +9,8 @@ jobs:
     name: Rust (fmt / clippy / build)
     runs-on: ubuntu-latest
     steps:
+      # grammars/quint は Zed が extension.toml 経由で取得するため CI では不要
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
