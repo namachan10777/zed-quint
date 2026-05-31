@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  rust:
+    name: Rust (fmt / clippy / build)
+    runs-on: ubuntu-latest
+    steps:
+      # grammars/quint は Zed が extension.toml 経由で取得するため CI では不要
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+          targets: wasm32-wasip1
+      - uses: Swatinem/rust-cache@v2
+      - name: rustfmt
+        run: cargo fmt --all -- --check
+      - name: clippy
+        run: cargo clippy --target wasm32-wasip1 --all-targets -- -D warnings
+      - name: build
+        run: cargo build --release --target wasm32-wasip1
+
+  format:
+    name: TOML / Scheme (taplo / topiary)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - name: taplo fmt
+        run: nix run nixpkgs#taplo -- fmt --check
+      - name: taplo lint
+        run: nix run nixpkgs#taplo -- lint
+      # topiary 0.7 には --check が無いため、整形して git diff で検証する
+      - name: topiary format check
+        run: |
+          nix run nixpkgs#topiary -- format languages/quint/*.scm
+          git diff --exit-code languages/quint

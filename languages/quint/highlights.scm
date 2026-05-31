@@ -14,42 +14,54 @@
 
 ; Definitions
 (operator_definition
-  name: (qualified_identifier) @function)
+  name: (qualified_identifier) @function
+)
 
 (type_alias
-  (identifier) @type)
+  (identifier) @type
+)
 
 (variable_definition
-  (qualified_identifier) @variable)
+  (qualified_identifier) @variable
+)
 
 (constant_declaration
-  (qualified_identifier) @constant)
+  (qualified_identifier) @constant
+)
 
 (variant_constructor
-  (qualified_identifier) @type)
+  (qualified_identifier) @type
+)
 
 ; Type names
 (type
-  (qualified_identifier) @type)
+  (qualified_identifier) @type
+)
 
 (polymorphic_type
-  (qualified_identifier) @type)
+  (qualified_identifier) @type
+)
 
 (record_type
-  (qualified_identifier) @property)
+  (qualified_identifier) @property
+)
 
 ; Module / import structure
 (module_definition
-  (qualified_identifier) @module)
+  (qualified_identifier) @module
+)
 
 (import
-  (qualified_identifier) @module)
+  (qualified_identifier) @module
+)
 
 (export
-  (qualified_identifier) @module)
+  (qualified_identifier) @module
+)
 
 (import_segment
-  (qualified_identifier) @module)
+  (qualified_identifier) @module
+)
 
 ; Keywords
 [

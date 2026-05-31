@@ -1,0 +1,2 @@
+# 外部 submodule やビルド成果物は対象外
+exclude = ["grammars/**", "target/**"]

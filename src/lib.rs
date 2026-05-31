@@ -2,8 +2,7 @@ use std::fs;
 use zed_extension_api::{self as zed, LanguageServerId, Result};
 
 const PACKAGE_NAME: &str = "@informalsystems/quint-language-server";
-const SERVER_PATH: &str =
-    "node_modules/@informalsystems/quint-language-server/out/src/server.js";
+const SERVER_PATH: &str = "node_modules/@informalsystems/quint-language-server/out/src/server.js";
 
 struct QuintExtension {
     did_find_server: bool,
@@ -11,7 +10,7 @@ struct QuintExtension {
 
 impl QuintExtension {
     fn server_exists(&self) -> bool {
-        fs::metadata(SERVER_PATH).map_or(false, |stat| stat.is_file())
+        fs::metadata(SERVER_PATH).is_ok_and(|stat| stat.is_file())
     }
 
     fn server_script_path(&mut self, id: &LanguageServerId) -> Result<String> {
