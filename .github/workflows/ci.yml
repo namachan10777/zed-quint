@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # grammars/quint は Zed が extension.toml 経由で取得するため CI では不要
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
@@ -27,7 +27,7 @@ jobs:
     name: TOML / Scheme (taplo / topiary)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: DeterminateSystems/nix-installer-action@main
       - name: taplo fmt
         run: nix run nixpkgs#taplo -- fmt --check
